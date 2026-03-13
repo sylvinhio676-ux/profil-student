@@ -1,0 +1,236 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --dark: #0f172a;
+    --card-bg: white;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    font-size: 1.8rem;
+    color: var(--dark);
+    cursor: pointer;
+    display: none;           /* caché par défaut (grand écran) */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+    margin: 0;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Profil */
+.profile-section {
+    max-width: 1400px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.2rem;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-bottom: 1.2rem;
+}
+
+.profile-name {
+    font-size: 2.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.filiere {
+    color: var(--gray);
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+/* Notes */
+.notes-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.2rem 3rem;
+}
+
+.grid-notes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.card-note {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: all 0.22s ease;
+}
+
+.card-note:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 1.3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    padding: 1.3rem;
+}
+
+.matiere {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.note {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0.6rem 0;
+}
+
+.prof {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 0.8rem;
+}
+
+/* ────────────────────────────────────────────────
+   RESPONSIVE
+   ──────────────────────────────────────────────── */
+
+/* Tablette : 2 colonnes */
+@media (min-width: 576px) {
+    .grid-notes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop : 3 colonnes + menu burger pour mobile */
+@media (max-width: 991px) {
+    .menu-toggle {
+        display: block;                /* burger visible sur mobile */
+    }
+
+    nav ul {
+        display: none;                 /* menu caché par défaut sur mobile */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1.5rem 1.2rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        z-index: 99;
+    }
+
+    nav ul.active {
+        display: flex;                 /* menu affiché quand .active */
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* Sur desktop (≥ 992px) on garde le menu horizontal visible */
+@media (min-width: 992px) {
+    .grid-notes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Amélioration affichage profil sur très grand écran */
+@media (min-width: 1200px) {
+    .profile-section {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 2.5rem;
+    }
+
+    .profile-picture {
+        margin: 0;
+    }
+
+    .nav-container {
+        padding: 0 2rem;
+    }
+
+    nav ul {
+        gap: 2.8rem;
+    }
+}

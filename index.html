@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Meta recommandés pour mobile -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="background-color" content="#f8fafc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Profil Étudiant">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <!-- Optionnel : icône  pour Windows / anciens navigateurs -->
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-TileImage" content="icons/icon-192.png">
+  <title>Profil Étudiant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <a href="#" class="logo">MyCampus</a>
+    
+    <div class="menu-toggle" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Notes</a></li>
+        <li><a href="#">Emplois du temps</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Déconnexion</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="profile-section">
+  <img 
+    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces" 
+    alt="Photo de profil" 
+    class="profile-picture"
+  >
+  <div>
+    <h1 class="profile-name">Sylvinhio Negoue</h1>
+    <p class="filiere">Licence 3 - Génie Logiciel & Systèmes d'Information</p>
+  </div>
+</section>
+
+<section class="notes-container">
+  <h2 style="margin-bottom: 1.8rem; font-size: 1.7rem;">Relevé de notes – Semestre 2</h2>
+
+  <div class="grid-notes">
+
+    <div class="card-note">
+      <div class="card-header">
+        <span>Programmation Web Avancée</span>
+        <span>16/20</span>
+      </div>
+      <div class="card-body">
+        <div class="matiere">Développement Full-Stack</div>
+        <div class="note">16<span style="font-size:1.1rem">/20</span></div>
+        <div class="prof">Dr. M. Tchuente</div>
+        <div class="date">CC: 8 | Examen: 24 | 30 mai 2025</div>
+      </div>
+    </div>
+
+    <div class="card-note">
+      <div class="card-header">
+        <span>Base de Données</span>
+        <span>14.5/20</span>
+      </div>
+      <div class="card-body">
+        <div class="matiere">SGBD & SQL Avancé</div>
+        <div class="note">14.5<span style="font-size:1.1rem">/20</span></div>
+        <div class="prof">Pr. E. Noubissi</div>
+        <div class="date">CC: 7 | Examen: 22 | 28 mai 2025</div>
+      </div>
+    </div>
+
+    <div class="card-note">
+      <div class="card-header">
+        <span>Intelligence Artificielle</span>
+        <span>17/20</span>
+      </div>
+      <div class="card-body">
+        <div class="matiere">Machine Learning – Intro</div>
+        <div class="note">17<span style="font-size:1.1rem">/20</span></div>
+        <div class="prof">Mme. L. Dongmo</div>
+        <div class="date">Projet: 9 | Examen: 25 | 4 juin 2025</div>
+      </div>
+    </div>
+
+    <!-- Vous pouvez ajouter autant de cartes que nécessaire -->
+
+  </div>
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
