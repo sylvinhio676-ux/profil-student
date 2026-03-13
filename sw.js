@@ -5,7 +5,7 @@ const   urlsToCache = [
   '/style.css',
   '/script.js',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-  '/icons/logo_insam.png'
+  '/icons/web-424068506.jpg'
 ];
 
 self.addEventListener('install', event => {
